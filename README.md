@@ -1,10 +1,11 @@
-# OOP Template
+# Proiect OOP
+Librarie construita cu ajutorul OOP in C++. In viitor, cu ajutorul acesteia vor putea fi indexate, cumparate si imprumutate carti.
 
 ### Tema 0
 
-- [ ] nume proiect (îl puteți schimba ulterior)
-- [ ] Scurtă descriere a temei alese, ce v-ați propus să implementați
-- [ ] actualizat `.gitignore` dacă nu sunt ignorate fișierele (binare) generate de editor/IDE; puteți folosi https://gitignore.io
+- [X] nume proiect (îl puteți schimba ulterior)
+- [X] Scurtă descriere a temei alese, ce v-ați propus să implementați
+- [X] actualizat `.gitignore` dacă nu sunt ignorate fișierele (binare) generate de editor/IDE; puteți folosi https://gitignore.io
 
 ## Tema 1
 
@@ -14,22 +15,22 @@
 - săptămâna 5 (6 noiembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [ ] definirea a minim 3 clase
-  - [ ] <clasa 1>
-  - [ ] <clasa 2>
-  - [ ] <clasa 3>
-- [ ] constructori de inițializare
-- [ ] constructor de copiere sau cc (pt minim o clasă)
-- [ ] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
-- [ ] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
-- [ ] `operator<<` pt toate clasele
-- [ ] cât mai multe `const`
-- [ ] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
+- [X] definirea a minim 3 clase
+  - [X] <clasa 1>
+  - [X] <clasa 2>
+  - [X] <clasa 3>
+- [X] constructori de inițializare
+- [X] constructor de copiere sau cc (pt minim o clasă)
+- [X] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
+- [X] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
+- [X] `operator<<` pt toate clasele
+- [X] cât mai multe `const`
+- [X] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
   - [ ] <prima funcționalitate>
   - [ ] <a doua funcționalitate>
-- [ ] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
-- [ ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
-- [ ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
+- [X] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
+- [X] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
+- [X] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
 ## Tema 2
 
