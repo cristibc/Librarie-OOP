@@ -38,6 +38,30 @@ public:
         return pret;
     }
 
+    void setNume(const string &nume) {
+        Carte::nume = nume;
+    }
+
+    void setAutor(const string &autor) {
+        Carte::autor = autor;
+    }
+
+    void setEditura(const string &editura) {
+        Carte::editura = editura;
+    }
+
+    void setNrPagini(int nrPagini) {
+        Carte::nrPagini = nrPagini;
+    }
+
+    void setAnPublicare(int anPublicare) {
+        Carte::anPublicare = anPublicare;
+    }
+
+    void setPret(int pret) {
+        Carte::pret = pret;
+    }
+
     friend std::ostream &operator<<(std::ostream &os, const Carte &carte) {
         os << "Numele cartii: " << carte.nume << ", Autor: " << carte.autor << " Editura: " << carte.editura
            << ", Numar Pagini: "
@@ -69,12 +93,28 @@ public:
         std::cout << "A fost apelat destructorul" << std::endl;
     }
 
-    void search(string query) {
-        int nrCarti = this->listaCarti.size();
-        for (int i = 0; i < nrCarti; i++)
-            if (query = listaCarti[i])
-                std::cout << "Cartea a fost identificata in stoc" << std::endl;
-            else std::cout << "Cartea nu a fost identificata in stoc" << std::endl;
+
+    void adaugareCarte(int counter) {
+        string nume, autor, editura;
+        int nrPagini;
+        int anPublicare;
+        int pret;
+    }
+
+        std::cout<<"Se introduce o carte noua in sistem..."<<std::endl;
+        std::cout<<"Introduceti numele cartii: ";
+        getline(std::cin,nume);
+        carte[counter].setNume(nume);
+        std::cout<<"Introduceti numele autorului: ";
+        getline(std::cin, autor);
+        carte[counter].setAutor(autor);
+        std::cout<<"Introduceti numele editurii: ";
+        getline(std::cin, editura);
+        carte[counter].setEditura(editura);
+        std::cout<<"Introduceti numarul de pagini: ";
+        getline(std::cin, nrPagini);
+        carte[counter].
+
     }
 
 
@@ -85,6 +125,7 @@ class Autor {
 private:
     string nume, gen, limba;
     int varsta;
+    std::vector<Carte> carti;
 
 public:
     Autor(const string &nume, const string &gen, const string &limba, int varsta) : nume(nume), gen(gen), limba(limba),
@@ -129,36 +170,32 @@ public:
         this->limba = copie.limba;
     }
 
-    void findLike() {
-        int nrCarti = this->listaCarti.size();
-        for (int i = 0; i < nrCarti; i++) {
-            if (getGen() == getGen(i))
-                std::cout << "Am mai gasit o carte din genul cautat: " << std::endl;
-        }
-        std::cout << "Nu am gasit nici o carte de genul acesta" << std::endl;
+    void search(std::string query){
+        for (int i=0; i<carte.size(); i++)
+            if(carte[i].getNume() == query)
+                std::cout<<query<<" a fost gasita.";
+            else std::cout<<"Cartea nu a fost gasita";
+
     }
+
 };
 
 class Librarie {
 private:
-    std::vector<Carte> listaCarti;
-    std::vector<Autor> listaAutori;
     string numeClient;
     int adresaClient;
+    std::vector<Carte> carte;
 
 public:
 
-    Librarie(const std::vector<Carte> &listaCarti, const std::vector<Autor> &listaAutori, const string &numeClient,
-             int adresaClient) : listaCarti(listaCarti), listaAutori(listaAutori), numeClient(numeClient),
-                                 adresaClient(adresaClient) {}
+    Librarie(const string &numeClient, int adresaClient, const std::vector<Carte> &carte) : numeClient(numeClient),
+                                                                                            adresaClient(adresaClient),
+                                                                                            carte(carte) {}
 
-    void adaugare_carte(Carte &carte) {
-        listaCarti.push_back(carte);
+    void adaugare_carte(Carte &nume) {
+        carte.push_back(nume);
     }
 
-    void adaugare_autor(Autor &autor) {
-        listaAutori.push_back(autor);
-    }
 
     const string &getNumeClient() const {
         return numeClient;
@@ -176,10 +213,9 @@ public:
         Librarie::adresaClient = adresaClient;
     }
 
-    void stocCarti() {
-        std::cout << "In librarie poti gasi: " << this->listaCarti.size() << " carti.";
 
-    }
+
+
 
 };
 
@@ -187,14 +223,11 @@ public:
 int main() {
     Carte carte1("Verity", "Colleen Hoover", "Epic", 293, 2018, 45);
     Carte carte2("Harry Potter 1", "J.K. Rowling", "Arthur", 260, 1997, 30);
-    Carte carte3("Stapanul Inelelor 1", "J.R.R Tolkien", "RAO", 640, 1954, 55)
-    Carte carte3("Stapanul Inelelor 2", "J.R.R Tolkien", "RAO", 352, 1954, 50)
-    Carte carte3("Stapanul Inelelor 3", "J.R.R Tolkien", "RAO", 416, 1955, 56)
+    Carte carte3("Stapanul Inelelor 1", "J.R.R Tolkien", "RAO", 640, 1954, 55);
     Carte carte4("Harry Potter 2", "J.K. Rowling", "Arthur", 310, 1998, 32);
     Carte carte5("Harry Potter 3", "J.K. Rowling", "Arthur", 350, 1999, 33);
     Carte carte6("Harry Potter 4", "J.K. Rowling", "Arthur", 420, 2000, 36);
+    carte1.search("Harry Potter");
 
-    Carte search("Harry Potter");
-    carte1.findLike();
 
 }
