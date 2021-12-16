@@ -41,14 +41,14 @@ Librarie construita cu ajutorul OOP in C++. In viitor, cu ajutorul acesteia vor 
 
 #### Cerințe
 - [ ] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri
-  - [ ] funcții virtuale (pure)
-  - [ ] apelarea constructorului din clasa de bază 
-  - [ ] smart pointers / pointeri normali și verificat să nu fie memory leaks
-- [ ] excepții
-  - [ ] predefinite
+- [X] moșteniri
+  - [X] funcții virtuale (pure)
+  - [X] apelarea constructorului din clasa de bază 
+  - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
+- [X] excepții
+  - [X] predefinite
   - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
+  - [X] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [ ] funcții și atribute `static`
 - [ ] STL
 - [ ] cât mai multe `const`
