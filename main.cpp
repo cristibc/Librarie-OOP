@@ -1,26 +1,230 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "Autor.h"
-#include "Carte.h"
 
 using std::string;
 
+class Carte {
+private:
+    string nume, autor, editura;
+    int nrPagini;
+    int anPublicare;
+    int pret;
+
+public:
+    Carte(const string &nume, const string &autor, const string &editura, int nrPagini, int anPublicare, int pret)
+            : nume(nume), autor(autor), editura(editura), nrPagini(nrPagini), anPublicare(anPublicare), pret(pret) {}
+
+    const string &getNume() const {
+        return nume;
+    }
+
+    const string &getAutor() const {
+        return autor;
+    }
+
+    const string &getEditura() const {
+        return editura;
+    }
+
+    int getNrPagini() const {
+        return nrPagini;
+    }
+
+    int getAnPublicare() const {
+        return anPublicare;
+    }
+
+    int getPret() const {
+        return pret;
+    }
+
+    void setNume(const string &nume) {
+        Carte::nume = nume;
+    }
+
+    void setAutor(const string &autor) {
+        Carte::autor = autor;
+    }
+
+    void setEditura(const string &editura) {
+        Carte::editura = editura;
+    }
+
+    void setNrPagini(int nrPagini) {
+        Carte::nrPagini = nrPagini;
+    }
+
+    void setAnPublicare(int anPublicare) {
+        Carte::anPublicare = anPublicare;
+    }
+
+    void setPret(int pret) {
+        Carte::pret = pret;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Carte &carte) {
+        os << "Numele cartii: " << carte.nume << ", Autor: " << carte.autor << " Editura: " << carte.editura
+           << ", Numar Pagini: "
+           << carte.nrPagini << ", Anul Publicarii: " << carte.anPublicare << ", Pret: " << carte.pret << " lei"
+           << std::endl;
+        return os;
+    }
+
+    Carte(const Carte &copie) {
+        this->nume = copie.nume;
+        this->autor = copie.autor;
+        this->editura = copie.editura;
+        this->nrPagini = copie.nrPagini;
+        this->anPublicare = copie.anPublicare;
+        this->pret = copie.pret;
+
+    }
+
+    Carte &operator=(const Carte &copie) {
+        this->nume = copie.nume;
+        this->autor = copie.autor;
+        this->editura = copie.editura;
+        this->nrPagini = copie.nrPagini;
+        this->anPublicare = copie.anPublicare;
+        this->pret = copie.pret;
+    }
+
+    ~Carte() {
+        //std::cout << "A fost apelat destructorul" << std::endl;
+    }
+//    int counter = 0;
+//
+//    void increment (int a){
+//        a++;
+//        counter = a;
+//    }
+//
+//    void decrement (int a){
+//        a--;
+//        counter = a;
+//    }
+//    std::vector<Carte> carte;
+//
+
+//    void adaugareCarte(int counter) {
+//        string nume, autor, editura;
+//        int nrPagini;
+//        int anPublicare;
+//        int pret;
+//
+//        std::cout<<"Introdu numele cartii: "<<std::endl;
+//        std::cin>>nume;
+//        carte[counter].setNume(nume);
+//        std::cout<<"Introdu autorul cartii: "<<std::endl;
+//        std::cin>>autor;
+//        carte[counter].setAutor(autor);
+//        std::cout<<"Introdu editura cartii: "<<std::endl;
+//        std::cin>>editura;
+//        carte[counter].setEditura(editura);
+//        std::cout<<"Introdu nr pagini ale cartii: "<<std::endl;
+//        std::cin>>nrPagini;
+//        carte[counter].setNrPagini(nrPagini);
+//        std::cout<<"Introdu anul de publicare al cartii: "<<std::endl;
+//        std::cin>>anPublicare;
+//        carte[counter].setAnPublicare(anPublicare);
+//        std::cout<<"Introdu pretul cartii: "<<std::endl;
+//        std::cin>>pret;
+//        carte[counter].setPret(pret);
+//        carte.push_back(carte[counter]);
+//        return;
+//    }
+
+
+    void adaugareCarte(int counter) {
+        string nume, autor, editura;
+        int nrPagini;
+        int anPublicare;
+        int pret;
+    }
+
+
+};
+
+class ComicBook : public Carte {
+public:
+    ComicBook(const string &nume, const string &autor, const string &editura, int nrPagini, int anPublicare, int pret)
+            : Carte(nume, autor, editura, nrPagini, anPublicare, pret) {}
+
+
+};
+
+
+class Order {
+private:
+    int pret;
+    int id_order;
+    std::vector<std::shared_ptr<Carte>> lista_order;
+
+
+public:
+    Order(int pret, int idOrder, const std::vector<std::shared_ptr<Carte>> &listaOrder) : pret(pret), id_order(idOrder),
+                                                                                          lista_order(listaOrder) {}
+
+    int getPret() const {
+        return pret;
+    }
+
+    void setPret(int pret) {
+        Order::pret = pret;
+    }
+
+    int getIdOrder() const {
+        return id_order;
+    }
+
+    void setIdOrder(int idOrder) {
+        id_order = idOrder;
+    }
+
+    const std::vector<std::shared_ptr<Carte>> &getListaOrder() const {
+        return lista_order;
+    }
+
+    void setListaOrder(const std::vector<std::shared_ptr<Carte>> &listaOrder) {
+        lista_order = listaOrder;
+    }
+
+    int pret_total = 0;
+
+    void comanda_pret() {
+
+        for (int i = 0; i < lista_order.size(); i++)
+            pret_total = pret_total + lista_order.at(i)->getPret();
+            this->pret = pret_total;
+    }
+
+    void adaugareCarte(std::shared_ptr<Carte> carteComandata) {
+        lista_order.push_back(carteComandata);
+        std::cout<<"La comanda ati adaugat: "<<carteComandata->getNume()<<std::endl;
+    }
+
+    void plasareComanda(int suma) {
+        std::cout << "Pretul total al comenzii este: " << pret_total << std::endl;
+        if (suma>=pret_total)
+            std::cout<<"Comanda a fost plasata cu succes"<<std::endl;
+        else
+            throw "Pretul comenzii depaseste suma platita";
+    }
+
+
+};
 
 class Librarie {
 private:
     string numeClient;
     string adresaClient;
-    std::vector<Carte> carte;
+    std::vector<std::shared_ptr<Carte>> &carte;
 
 public:
 
-    Librarie(const string &numeClient, const string &adresaClient, const std::vector<Carte> &carte) : numeClient(
-            numeClient), adresaClient(adresaClient), carte(carte) {}
-
-    void adaugare_carte(Carte &nume) {
-        carte.push_back(nume);
-    }
+    Librarie(const string &numeClient, const string &adresaClient, std::vector<std::shared_ptr<Carte>> &carte)
+            : numeClient(numeClient), adresaClient(adresaClient), carte(carte) {}
 
 
     const string &getNumeClient() const {
@@ -36,25 +240,25 @@ public:
     }
 
 
-    void search(std::string query){
-        for (int i=0; i<carte.size(); i++) {
-            if (carte[i].getNume() == query) {
-                std::cout << query << " a fost gasita."<<std::endl;
+    void search(std::string query) {
+        for (int i = 0; i < carte.size(); i++) {
+            if (carte[i]->getNume() == query) {
+                std::cout << query << " a fost gasita." << std::endl;
                 return;
             }
-        } std::cout<< "Cartea nu a fost gasita"<<std::endl;
+        }
+        std::cout << "Cartea nu a fost gasita" << std::endl;
     }
 
-    void listCarti(std::string query){
-        std::cout<<"Cartile autorului: "<<query<<" din libraria noastra sunt:"<<std::endl;
-        std::cout<<"----------"<<std::endl;
-        for (int i=0; i<carte.size(); i++) {
-            if(carte[i].getAutor() == query){
-                std::cout<<carte[i].getNume()<<std::endl;
+    void listCarti(std::string query) {
+        std::cout << "Cartile autorului: " << query << " din libraria noastra sunt:" << std::endl;
+        for (int i = 0; i < carte.size(); i++) {
+            if (carte[i]->getAutor() == query) {
+                std::cout << carte[i]->getNume() << std::endl;
             }
-        }std::cout<<"----------"<<std::endl;
+        }
+        std::cout << "----------" << std::endl;
     }
-
 
 
 };
@@ -67,13 +271,26 @@ int main() {
     Carte carte4("Harry Potter 2", "J.K. Rowling", "Arthur", 310, 1998, 32);
     Carte carte5("Harry Potter 3", "J.K. Rowling", "Arthur", 350, 1999, 33);
     Carte carte6("Harry Potter 4", "J.K. Rowling", "Arthur", 420, 2000, 36);
-    std::vector<Carte> carti;
-    carti.push_back(carte1);
-    carti.push_back(carte2);
-    carti.push_back(carte3);
-    carti.push_back(carte4);
-    carti.push_back(carte5);
-    carti.push_back(carte6);
+    ComicBook comic1("Spider-Man 1", "Stan Lee", "Marvel", 30, 2011, 47);
+    std::vector<std::shared_ptr<Carte>> carti;
+    carti.push_back(std::make_shared<Carte>(carte1));
+    carti.push_back(std::make_shared<Carte>(carte2));
+    carti.push_back(std::make_shared<Carte>(carte3));
+    carti.push_back(std::make_shared<Carte>(carte4));
+    carti.push_back(std::make_shared<Carte>(carte5));
+    carti.push_back(std::make_shared<Carte>(carte6));
+try {
+    std::vector<std::shared_ptr<Carte>> cartiComenzi;
+    Order order1(80, 1, cartiComenzi);
+    order1.adaugareCarte(std::make_shared<Carte>(carte1));
+    order1.adaugareCarte(std::make_shared<Carte>(carte2));
+    order1.comanda_pret();
+    order1.plasareComanda(20);
+}
+catch (const char * Exceptie){
+    std::cout<< "Exceptie: "<< Exceptie<<std::endl;
+}
+
     //carti.push_back(carte7);
 
     Librarie lib1("Cristi", "Bucuresti", carti);
@@ -82,3 +299,4 @@ int main() {
 
 
 }
+
