@@ -47,7 +47,7 @@ Librarie construita cu ajutorul OOP in C++. In viitor, cu ajutorul acesteia vor 
   - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [X] excepții
   - [X] predefinite
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
+  - [X] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
   - [X] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [ ] funcții și atribute `static`
 - [ ] STL
