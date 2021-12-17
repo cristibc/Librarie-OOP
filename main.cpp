@@ -90,54 +90,11 @@ public:
         this->pret = copie.pret;
     }
 
-    ~Carte() {
-        //std::cout << "A fost apelat destructorul" << std::endl;
-    }
-//    int counter = 0;
-//
-//    void increment (int a){
-//        a++;
-//        counter = a;
-//    }
-//
-//    void decrement (int a){
-//        a--;
-//        counter = a;
-//    }
-//    std::vector<Carte> carte;
-//
-
-//    void adaugareCarte(int counter) {
-//        string nume, autor, editura;
-//        int nrPagini;
-//        int anPublicare;
-//        int pret;
-//
-//        std::cout<<"Introdu numele cartii: "<<std::endl;
-//        std::cin>>nume;
-//        carte[counter].setNume(nume);
-//        std::cout<<"Introdu autorul cartii: "<<std::endl;
-//        std::cin>>autor;
-//        carte[counter].setAutor(autor);
-//        std::cout<<"Introdu editura cartii: "<<std::endl;
-//        std::cin>>editura;
-//        carte[counter].setEditura(editura);
-//        std::cout<<"Introdu nr pagini ale cartii: "<<std::endl;
-//        std::cin>>nrPagini;
-//        carte[counter].setNrPagini(nrPagini);
-//        std::cout<<"Introdu anul de publicare al cartii: "<<std::endl;
-//        std::cin>>anPublicare;
-//        carte[counter].setAnPublicare(anPublicare);
-//        std::cout<<"Introdu pretul cartii: "<<std::endl;
-//        std::cin>>pret;
-//        carte[counter].setPret(pret);
-//        carte.push_back(carte[counter]);
-//        return;
-//    }
+    ~Carte() {}
 
 
     void adaugareCarte(int counter) {
-        string nume, autor, editura;
+        const string nume, autor, editura;
         int nrPagini;
         int anPublicare;
         int pret;
@@ -190,30 +147,33 @@ public:
         lista_order = listaOrder;
     }
 
-    int pret_total = 0;
+//    int pret_total = 0;
 
     void comanda_pret() {
 
         for (int i = 0; i < lista_order.size(); i++)
             pret_total = pret_total + lista_order.at(i)->getPret();
-            this->pret = pret_total;
+        this->pret = pret_total;
     }
 
     void adaugareCarte(std::shared_ptr<Carte> carteComandata) {
         lista_order.push_back(carteComandata);
-        std::cout<<"La comanda ati adaugat: "<<carteComandata->getNume()<<std::endl;
+        std::cout << "La comanda ati adaugat: " << carteComandata->getNume() << std::endl;
     }
 
     void plasareComanda(int suma) {
         std::cout << "Pretul total al comenzii este: " << pret_total << std::endl;
-        if (suma>=pret_total)
-            std::cout<<"Comanda a fost plasata cu succes"<<std::endl;
+        if (suma >= pret_total)
+            std::cout << "Comanda a fost plasata cu succes" << std::endl;
         else
             throw "Pretul comenzii depaseste suma platita";
     }
 
+    static int pret_total;
 
 };
+
+int Order::pret_total;
 
 class Librarie {
 private:
@@ -264,6 +224,68 @@ public:
 };
 
 
+class abonament {
+    string nume;
+    int pret_abonament;
+    int reducere;
+    int carti_gratuite;
+    string produse_exclusive;
+
+    friend class abonament_builder;
+
+public:
+    abonament() = default;
+
+
+    friend std::ostream &operator<<(std::ostream &os, const abonament &abonament);
+};
+
+class abonament_builder {
+private:
+    abonament a;
+public:
+    abonament_builder() = default;
+
+    abonament_builder &nume(const char *nume) {
+        a.nume = nume;
+        return *this;
+    }
+
+    abonament_builder &pret_abonament(int pret) {
+        a.pret_abonament = pret;
+        return *this;
+    }
+
+    abonament_builder &reducere(int reducere) {
+        a.reducere = reducere;
+        return *this;
+    }
+
+    abonament_builder &carti_gratuite(int nr) {
+        a.carti_gratuite = nr;
+        return *this;
+    }
+
+    abonament_builder &produse_exclusive(const char *produse) {
+        a.produse_exclusive = produse;
+        return *this;
+    }
+
+    abonament build() {
+        return a;
+
+    }
+
+};
+
+std::ostream &operator<<(std::ostream &os, const abonament &abonament) {
+    os << "Nume abonament: " << abonament.nume << ", Pretul abonamentului: " << abonament.pret_abonament << ", Reducere articole: "
+       << abonament.reducere << "%" << ", Numar carti gratuite: " << abonament.carti_gratuite << ", Produse exclusive: "
+       << abonament.produse_exclusive << std::endl;
+    return os;
+}
+
+
 int main() {
     Carte carte1("The Hobbit", "J.R.R Tolkien", "RAO", 350, 2017, 45);
     Carte carte2("Harry Potter 1", "J.K. Rowling", "Arthur", 260, 1997, 30);
@@ -279,19 +301,23 @@ int main() {
     carti.push_back(std::make_shared<Carte>(carte4));
     carti.push_back(std::make_shared<Carte>(carte5));
     carti.push_back(std::make_shared<Carte>(carte6));
-try {
-    std::vector<std::shared_ptr<Carte>> cartiComenzi;
-    Order order1(80, 1, cartiComenzi);
-    order1.adaugareCarte(std::make_shared<Carte>(carte1));
-    order1.adaugareCarte(std::make_shared<Carte>(carte2));
-    order1.comanda_pret();
-    order1.plasareComanda(20);
-}
-catch (const char * Exceptie){
-    std::cout<< "Exceptie: "<< Exceptie<<std::endl;
-}
+    try {
+        std::vector<std::shared_ptr<Carte>> cartiComenzi;
+        Order order1(80, 1, cartiComenzi);
+        order1.adaugareCarte(std::make_shared<Carte>(carte1));
+        order1.adaugareCarte(std::make_shared<Carte>(carte2));
+        order1.comanda_pret();
+        order1.plasareComanda(20);
+    }
+    catch (const char *Exceptie) {
+        std::cout << "Exceptie: " << Exceptie << std::endl;
+    }
 
-    //carti.push_back(carte7);
+    abonament_builder b;
+    abonament d = b.pret_abonament(10).reducere(5).carti_gratuite(2).produse_exclusive("Breloc special").nume(
+            "Silver Tier").build();
+    std::cout << d;
+
 
     Librarie lib1("Cristi", "Bucuresti", carti);
     lib1.search("Harry Potter 3");
