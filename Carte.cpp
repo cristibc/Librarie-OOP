@@ -1,8 +1,9 @@
 //
-// Created by thege on 13.12.2021.
+// Created by thege on 18.12.2021.
 //
 
 #include "Carte.h"
+
 
 Carte::Carte(const string &nume, const string &autor, const string &editura, int nrPagini, int anPublicare, int pret)
         : nume(nume), autor(autor), editura(editura), nrPagini(nrPagini), anPublicare(anPublicare), pret(pret) {}
@@ -13,6 +14,10 @@ const string &Carte::getNume() const {
 
 const string &Carte::getAutor() const {
     return autor;
+}
+
+const string &Carte::getEditura() const {
+    return editura;
 }
 
 int Carte::getNrPagini() const {
@@ -78,6 +83,4 @@ Carte &Carte::operator=(const Carte &copie) {
     this->pret = copie.pret;
 }
 
-Carte::~Carte() {
-    //std::cout << "A fost apelat destructorul" << std::endl;
-}
+Carte::~Carte() {}

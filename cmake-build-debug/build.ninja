@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: BookshopOOP
+# Project: OOPTesting
 # Configurations: Debug
 # =============================================================================
 
@@ -39,58 +39,82 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/thege/CLionProjects/BookshopOOP/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/thege/CLionProjects/OOPTesting/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target BookshopOOP
+# Object build statements for EXECUTABLE target OOPTesting
 
 
 #############################################
-# Order-only phony target for BookshopOOP
+# Order-only phony target for OOPTesting
 
-build cmake_object_order_depends_target_BookshopOOP: phony || CMakeFiles/BookshopOOP.dir
+build cmake_object_order_depends_target_OOPTesting: phony || CMakeFiles/OOPTesting.dir
 
-build CMakeFiles/BookshopOOP.dir/main.cpp.obj: CXX_COMPILER__BookshopOOP_Debug C$:/Users/thege/CLionProjects/BookshopOOP/main.cpp || cmake_object_order_depends_target_BookshopOOP
-  DEP_FILE = CMakeFiles\BookshopOOP.dir\main.cpp.obj.d
+build CMakeFiles/OOPTesting.dir/main.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/main.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\BookshopOOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\BookshopOOP.dir
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
 
-build CMakeFiles/BookshopOOP.dir/Carte.cpp.obj: CXX_COMPILER__BookshopOOP_Debug C$:/Users/thege/CLionProjects/BookshopOOP/Carte.cpp || cmake_object_order_depends_target_BookshopOOP
-  DEP_FILE = CMakeFiles\BookshopOOP.dir\Carte.cpp.obj.d
+build CMakeFiles/OOPTesting.dir/Carte.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/Carte.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\Carte.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\BookshopOOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\BookshopOOP.dir
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
 
-build CMakeFiles/BookshopOOP.dir/Autor.cpp.obj: CXX_COMPILER__BookshopOOP_Debug C$:/Users/thege/CLionProjects/BookshopOOP/Autor.cpp || cmake_object_order_depends_target_BookshopOOP
-  DEP_FILE = CMakeFiles\BookshopOOP.dir\Autor.cpp.obj.d
+build CMakeFiles/OOPTesting.dir/ComicBook.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/ComicBook.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\ComicBook.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  OBJECT_DIR = CMakeFiles\BookshopOOP.dir
-  OBJECT_FILE_DIR = CMakeFiles\BookshopOOP.dir
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
+
+build CMakeFiles/OOPTesting.dir/Order.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/Order.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\Order.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
+
+build CMakeFiles/OOPTesting.dir/Librarie.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/Librarie.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\Librarie.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
+
+build CMakeFiles/OOPTesting.dir/Abonament.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/Abonament.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\Abonament.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
+
+build CMakeFiles/OOPTesting.dir/PachetPromo.cpp.obj: CXX_COMPILER__OOPTesting_Debug C$:/Users/thege/CLionProjects/OOPTesting/PachetPromo.cpp || cmake_object_order_depends_target_OOPTesting
+  DEP_FILE = CMakeFiles\OOPTesting.dir\PachetPromo.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOPTesting.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target BookshopOOP
+# Link build statements for EXECUTABLE target OOPTesting
 
 
 #############################################
-# Link the executable BookshopOOP.exe
+# Link the executable OOPTesting.exe
 
-build BookshopOOP.exe: CXX_EXECUTABLE_LINKER__BookshopOOP_Debug CMakeFiles/BookshopOOP.dir/main.cpp.obj CMakeFiles/BookshopOOP.dir/Carte.cpp.obj CMakeFiles/BookshopOOP.dir/Autor.cpp.obj
+build OOPTesting.exe: CXX_EXECUTABLE_LINKER__OOPTesting_Debug CMakeFiles/OOPTesting.dir/main.cpp.obj CMakeFiles/OOPTesting.dir/Carte.cpp.obj CMakeFiles/OOPTesting.dir/ComicBook.cpp.obj CMakeFiles/OOPTesting.dir/Order.cpp.obj CMakeFiles/OOPTesting.dir/Librarie.cpp.obj CMakeFiles/OOPTesting.dir/Abonament.cpp.obj CMakeFiles/OOPTesting.dir/PachetPromo.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\BookshopOOP.dir
+  OBJECT_DIR = CMakeFiles\OOPTesting.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = BookshopOOP.exe
-  TARGET_IMPLIB = libBookshopOOP.dll.a
-  TARGET_PDB = BookshopOOP.exe.dbg
+  TARGET_FILE = OOPTesting.exe
+  TARGET_IMPLIB = libOOPTesting.dll.a
+  TARGET_PDB = OOPTesting.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\thege\CLionProjects\BookshopOOP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\thege\CLionProjects\OOPTesting\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -101,7 +125,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\thege\CLionProjects\BookshopOOP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\thege\CLionProjects\BookshopOOP -BC:\Users\thege\CLionProjects\BookshopOOP\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\thege\CLionProjects\OOPTesting\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\thege\CLionProjects\OOPTesting -BC:\Users\thege\CLionProjects\OOPTesting\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -111,7 +135,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build BookshopOOP: phony BookshopOOP.exe
+build OOPTesting: phony OOPTesting.exe
 
 # =============================================================================
 # Folder targets.
@@ -119,9 +143,9 @@ build BookshopOOP: phony BookshopOOP.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/thege/CLionProjects/BookshopOOP/cmake-build-debug
+# Folder: C:/Users/thege/CLionProjects/OOPTesting/cmake-build-debug
 
-build all: phony BookshopOOP.exe
+build all: phony OOPTesting.exe
 
 # =============================================================================
 # Built-in targets

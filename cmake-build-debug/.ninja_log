@@ -1,0 +1,17 @@
+# ninja log v5
+6	1576	6615326596045751	CMakeFiles/OOPTesting.dir/main.cpp.obj	1d825eaad6ac54a0
+1578	2013	6615326600256077	OOPTesting.exe	b7f6e9b7b9777dd
+35	1906	6615359322261419	CMakeFiles/OOPTesting.dir/Carte.cpp.obj	fc6a5bd0c68b6f87
+52	1937	6615359322141276	CMakeFiles/OOPTesting.dir/Abonament.cpp.obj	c3d23165932ae5f
+41	1972	6615359323121326	CMakeFiles/OOPTesting.dir/ComicBook.cpp.obj	f25a99eac68b60b0
+5	2171	6615359325092744	CMakeFiles/OOPTesting.dir/main.cpp.obj	1d825eaad6ac54a0
+46	2834	6615359331846028	CMakeFiles/OOPTesting.dir/PachetPromo.cpp.obj	a9bb1c8af8ca4ec4
+58	3068	6615359334085768	CMakeFiles/OOPTesting.dir/Order.cpp.obj	d04c85b731706990
+1907	3151	6615359335055703	CMakeFiles/OOPTesting.dir/Librarie.cpp.obj	ecc7c7107d8bd6b5
+37	1772	6615359924461608	CMakeFiles/OOPTesting.dir/Abonament.cpp.obj	c3d23165932ae5f
+6	2022	6615359928181248	CMakeFiles/OOPTesting.dir/main.cpp.obj	1d825eaad6ac54a0
+33	1510	6615360325601923	CMakeFiles/OOPTesting.dir/Abonament.cpp.obj	c3d23165932ae5f
+5	1775	6615360328141643	CMakeFiles/OOPTesting.dir/main.cpp.obj	1d825eaad6ac54a0
+31	2139	6615360534104356	CMakeFiles/OOPTesting.dir/Order.cpp.obj	d04c85b731706990
+5	2369	6615360536524074	CMakeFiles/OOPTesting.dir/main.cpp.obj	1d825eaad6ac54a0
+2369	2729	6615360540144336	OOPTesting.exe	4fe0833075413767
