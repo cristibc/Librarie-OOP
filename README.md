@@ -1,5 +1,5 @@
 # Proiect OOP
-Librarie construita cu ajutorul OOP in C++.
+Librarie virtuala construita cu ajutorul OOP in C++.
 
 ### Tema 0
 
