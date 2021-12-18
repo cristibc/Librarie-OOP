@@ -11,6 +11,7 @@ private:
     int anPublicare;
     int pret;
 
+// Clasa de baza a cartilor
 public:
     Carte(const string &nume, const string &autor, const string &editura, int nrPagini, int anPublicare, int pret)
             : nume(nume), autor(autor), editura(editura), nrPagini(nrPagini), anPublicare(anPublicare), pret(pret) {}
@@ -90,19 +91,12 @@ public:
         this->pret = copie.pret;
     }
 
+// Destructorul
     ~Carte() {}
-
-
-    void adaugareCarte(int counter) {
-        const string nume, autor, editura;
-        int nrPagini;
-        int anPublicare;
-        int pret;
-    }
-
 
 };
 
+// Clasa mostenita din Carte
 class ComicBook : public Carte {
 public:
     ComicBook(const string &nume, const string &autor, const string &editura, int nrPagini, int anPublicare, int pret)
@@ -111,7 +105,7 @@ public:
 
 };
 
-
+// Clasa de plasare a comenzilor cu functii complexe, smart pointeri, exceptii
 class Order {
 private:
     int pret;
@@ -147,8 +141,6 @@ public:
         lista_order = listaOrder;
     }
 
-//    int pret_total = 0;
-
     void comanda_pret() {
 
         for (int i = 0; i < lista_order.size(); i++)
@@ -175,6 +167,7 @@ public:
 
 int Order::pret_total;
 
+// Clasa cu functii pentru listarea si gasirea membrilor din clasa Carte
 class Librarie {
 private:
     string numeClient;
@@ -217,12 +210,13 @@ public:
                 std::cout << carte[i]->getNume() << std::endl;
             }
         }
-        std::cout << "----------" << std::endl;
+        std::cout << "--------------" << std::endl;
     }
 
 
 };
 
+// Design pattern - builder
 
 class abonament {
     string nume;
@@ -279,12 +273,43 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &os, const abonament &abonament) {
-    os << "Nume abonament: " << abonament.nume << ", Pretul abonamentului: " << abonament.pret_abonament << ", Reducere articole: "
+    os << "Nume abonament: " << abonament.nume << ", Pretul abonamentului: " << abonament.pret_abonament
+       << ", Reducere articole: "
        << abonament.reducere << "%" << ", Numar carti gratuite: " << abonament.carti_gratuite << ", Produse exclusive: "
        << abonament.produse_exclusive << std::endl;
     return os;
 }
 
+
+// Design pattern - factory
+
+class pachetPromo {
+    string nume;
+    int reducere;
+    string serie;
+    string tip_cover;
+
+public:
+    pachetPromo(const string &nume, int reducere, const string &serie, const string &tipCover) : nume(nume),
+                                                                                                 reducere(reducere),
+                                                                                                 serie(serie),
+                                                                                                 tip_cover(tipCover) {}
+
+    friend std::ostream &operator<<(std::ostream &os, const pachetPromo &promo) {
+        os << "Numele promotiei: " << promo.nume << ", Reducere pachet: " << promo.reducere << "%"
+           << ", Serie inclusa: " << promo.serie << ", Tip Cover: "
+           << promo.tip_cover << std::endl;
+        return os;
+    }
+};
+
+class pachetPromo_factory {
+public:
+    static pachetPromo got() { return pachetPromo("Winter is coming", 20, "A Song of Ice and Fire", "Hardcover"); }
+
+};
+
+//Main-ul unde sunt apelate toate functiile
 
 int main() {
     Carte carte1("The Hobbit", "J.R.R Tolkien", "RAO", 350, 2017, 45);
@@ -293,7 +318,13 @@ int main() {
     Carte carte4("Harry Potter 2", "J.K. Rowling", "Arthur", 310, 1998, 32);
     Carte carte5("Harry Potter 3", "J.K. Rowling", "Arthur", 350, 1999, 33);
     Carte carte6("Harry Potter 4", "J.K. Rowling", "Arthur", 420, 2000, 36);
+    std::cout << carte1;
+
     ComicBook comic1("Spider-Man 1", "Stan Lee", "Marvel", 30, 2011, 47);
+    ComicBook comic2("SuperMan 1", "Stan Lee", "Marvel", 35, 2015, 52);
+    ComicBook comic3("Batman Returns", "Stan Lee", "Marvel", 55, 2013, 70);
+    std::cout << comic1;
+
     std::vector<std::shared_ptr<Carte>> carti;
     carti.push_back(std::make_shared<Carte>(carte1));
     carti.push_back(std::make_shared<Carte>(carte2));
@@ -301,6 +332,7 @@ int main() {
     carti.push_back(std::make_shared<Carte>(carte4));
     carti.push_back(std::make_shared<Carte>(carte5));
     carti.push_back(std::make_shared<Carte>(carte6));
+
     try {
         std::vector<std::shared_ptr<Carte>> cartiComenzi;
         Order order1(80, 1, cartiComenzi);
@@ -318,6 +350,8 @@ int main() {
             "Silver Tier").build();
     std::cout << d;
 
+    pachetPromo g = pachetPromo_factory::got();
+    std::cout << g;
 
     Librarie lib1("Cristi", "Bucuresti", carti);
     lib1.search("Harry Potter 3");
