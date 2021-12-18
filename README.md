@@ -1,5 +1,5 @@
 # Proiect OOP
-Librarie construita cu ajutorul OOP in C++. In viitor, cu ajutorul acesteia vor putea fi indexate, cumparate si imprumutate carti.
+Librarie construita cu ajutorul OOP in C++.
 
 ### Tema 0
 
