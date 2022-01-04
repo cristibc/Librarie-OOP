@@ -26,9 +26,9 @@ public:
     void setAdresaClient(const string &adresaClient);
 
 
-    void search(std::string query);
+    void search(const string &query);
 
-    void listCarti(std::string query);
+    void listCarti(const string &query);
 
 
 };
