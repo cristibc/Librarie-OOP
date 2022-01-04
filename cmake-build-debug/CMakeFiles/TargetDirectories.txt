@@ -1,3 +1,3 @@
-C:/Users/thege/CLionProjects/OOPTesting/cmake-build-debug/CMakeFiles/OOPTesting.dir
-C:/Users/thege/CLionProjects/OOPTesting/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/thege/CLionProjects/OOPTesting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/chris/Downloads/TemaOOPLibrarie/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/chris/Downloads/TemaOOPLibrarie/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/chris/Downloads/TemaOOPLibrarie/cmake-build-debug/CMakeFiles/OOPTesting.dir

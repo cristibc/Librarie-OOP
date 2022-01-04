@@ -12,7 +12,7 @@ class Librarie {
 private:
     string numeClient;
     string adresaClient;
-    std::vector<std::shared_ptr<Carte>> &carte;
+    std::vector<std::shared_ptr<Carte>> carte;
 
 public:
 

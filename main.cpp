@@ -14,7 +14,6 @@
 using std::string;
 
 
-
 //Main-ul unde sunt apelate toate functiile
 
 int main() {
@@ -53,16 +52,43 @@ int main() {
 catch (const std::exception& e){
     std::cout<<e.what();
 };
+    std::cout << std::endl;
 
     abonament_builder b;
     abonament d = b.pret_abonament(10).reducere(5).carti_gratuite(2).produse_exclusive("Breloc special").nume(
             "Silver Tier").build();
     std::cout << d;
 
-    pachetPromo g = pachetPromo_factory::got();
-    pachetPromo h = pachetPromo_factory::lotr();
+    std::cout << std::endl;
+
+    promoCarti g = factory::got();
+    promoCarti h = factory::lotr();
+
     std::cout << g;
     std::cout << h;
+    std::cout << std::endl;
+
+    promoVinyl x = factory::am();
+    promoVinyl l = factory::yzs();
+    promoVinyl p = factory::flw();
+
+    std::cout << x;
+    std::cout << l;
+    std::cout << p;
+    std::cout << std::endl;
+
+    promoManga a = factory::aot();
+    promoManga c = factory::dn();
+    promoManga e = factory::fma();
+
+    std::cout << a;
+    std::cout << c;
+    std::cout << e;
+    std::cout << std::endl;
+
+
+
+
 
     Librarie lib1("Cristi", "Bucuresti", carti);
     lib1.search("Harry Potter 3");
