@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <exception>
 #include <memory>
 #include "Carte.h"
 #include "ComicBook.h"
@@ -11,6 +12,8 @@
 #include "Librarie.h"
 
 using std::string;
+
+
 
 //Main-ul unde sunt apelate toate functiile
 
@@ -43,10 +46,13 @@ int main() {
         order1.adaugareCarte(std::make_shared<Carte>(carte2));
         order1.comanda_pret();
         order1.plasareComanda(20);
+
+
     }
-    catch (const char *Exceptie) {
-        std::cout << "Exceptie: " << Exceptie << std::endl;
-    }
+
+catch (const std::exception& e){
+    std::cout<<e.what();
+};
 
     abonament_builder b;
     abonament d = b.pret_abonament(10).reducere(5).carti_gratuite(2).produse_exclusive("Breloc special").nume(

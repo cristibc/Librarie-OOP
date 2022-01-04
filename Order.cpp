@@ -48,7 +48,9 @@ void Order::plasareComanda(int suma) {
     if (suma >= pret_total)
         std::cout << "Comanda a fost plasata cu succes" << std::endl;
     else
-        throw "Pretul comenzii depaseste suma platita";
+    {Exceptie d;
+        throw d;
+    }
 }
 
 int Order::pret_total;

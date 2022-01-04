@@ -13,11 +13,12 @@ class Order {
 private:
     int pret;
     int id_order;
-    std::vector<std::shared_ptr<Carte>> lista_order;
+    std::vector<std::shared_ptr<Carte> > lista_order;
+    static int pret_total;
 
 
 public:
-    Order(int pret, int idOrder, const std::vector<std::shared_ptr<Carte>> &listaOrder);
+    Order(int pret, int idOrder, const std::vector<std::shared_ptr<Carte> > &listaOrder);
 
     int getPret() const;
 
@@ -27,9 +28,9 @@ public:
 
     void setIdOrder(int idOrder);
 
-    const std::vector<std::shared_ptr<Carte>> &getListaOrder() const;
+    const std::vector<std::shared_ptr<Carte> > &getListaOrder() const;
 
-    void setListaOrder(const std::vector<std::shared_ptr<Carte>> &listaOrder);
+    void setListaOrder(const std::vector<std::shared_ptr<Carte> > &listaOrder);
 
     void comanda_pret();
 
@@ -37,10 +38,16 @@ public:
 
     void plasareComanda(int suma);
 
-    static int pret_total;
+
 
 };
 
+class Exceptie: public std::exception{
+public:
+    const char* what() const noexcept override {
+        return "Pretul comenzii depaseste suma platita\n";
+    }
+};
 
 
 

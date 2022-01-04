@@ -48,7 +48,7 @@ public:
 
     Carte(const Carte &copie);
 
-    Carte &operator=(const Carte &copie);
+    void operator=(const Carte &copie);
 
 // Destructorul
     ~Carte();
