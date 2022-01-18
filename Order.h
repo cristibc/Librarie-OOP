@@ -15,7 +15,7 @@ private:
     int id_order;
     std::vector<std::shared_ptr<Carte> > lista_order;
     static int pret_total;
-
+    const std::vector<std::shared_ptr<Carte> > &getListaOrder() const;
 
 public:
     Order(int pret, int idOrder, const std::vector<std::shared_ptr<Carte> > &listaOrder);
@@ -28,8 +28,6 @@ public:
 
     void setIdOrder(int idOrder);
 
-    const std::vector<std::shared_ptr<Carte> > &getListaOrder() const;
-
     void setListaOrder(const std::vector<std::shared_ptr<Carte> > &listaOrder);
 
     void comanda_pret();
@@ -37,8 +35,6 @@ public:
     void adaugareCarte(std::shared_ptr<Carte> carteComandata);
 
     void plasareComanda(int suma);
-
-
 
 };
 
@@ -48,8 +44,6 @@ public:
         return "Pretul comenzii depaseste suma platita\n";
     }
 };
-
-
 
 
 #endif //OOPTESTING_ORDER_H

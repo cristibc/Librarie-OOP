@@ -52,5 +52,4 @@ void Order::plasareComanda(int suma) {
         throw d;
     }
 }
-
 int Order::pret_total;
