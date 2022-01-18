@@ -45,8 +45,6 @@ int main() {
         order1.adaugareCarte(std::make_shared<Carte>(carte2));
         order1.comanda_pret();
         order1.plasareComanda(20);
-
-
     }
 
 catch (const std::exception& e){
@@ -61,34 +59,15 @@ catch (const std::exception& e){
 
     std::cout << std::endl;
 
-    promoCarti g = factory::got();
-    promoCarti h = factory::lotr();
+    Carte g = factory::got();
+    Carte h = factory::hg();
+    Carte v = factory::dv();
 
-    std::cout << g;
-    std::cout << h;
+    std::cout<<g;
+    std::cout<<h;
+    std::cout<<v;
+
     std::cout << std::endl;
-
-    promoVinyl x = factory::am();
-    promoVinyl l = factory::yzs();
-    promoVinyl p = factory::flw();
-
-    std::cout << x;
-    std::cout << l;
-    std::cout << p;
-    std::cout << std::endl;
-
-    promoManga a = factory::aot();
-    promoManga c = factory::dn();
-    promoManga e = factory::fma();
-
-    std::cout << a;
-    std::cout << c;
-    std::cout << e;
-    std::cout << std::endl;
-
-
-
-
 
     Librarie lib1("Cristi", "Bucuresti", carti);
     lib1.search("Harry Potter 3");
