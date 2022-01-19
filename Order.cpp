@@ -7,6 +7,7 @@
 Order::Order(int pret, int idOrder, const std::vector<std::shared_ptr<Carte>> &listaOrder) : pret(pret), id_order(idOrder),
                                                                                              lista_order(listaOrder) {}
 
+
 int Order::getPret() const {
     return pret;
 }
@@ -52,4 +53,4 @@ void Order::plasareComanda(int suma) {
         throw d;
     }
 }
-int Order::pret_total;
+//int Order::pret_total;

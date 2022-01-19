@@ -14,7 +14,7 @@ private:
     int pret;
     int id_order;
     std::vector<std::shared_ptr<Carte> > lista_order;
-    static int pret_total;
+    int pret_total;
     const std::vector<std::shared_ptr<Carte> > &getListaOrder() const;
 
 public:

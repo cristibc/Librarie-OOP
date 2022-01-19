@@ -74,7 +74,7 @@ Carte::Carte(const Carte &copie) {
 
 }
 
-void Carte::operator=(const Carte &copie) {
+Carte &Carte::operator=(const Carte &copie) {
     this->nume = copie.nume;
     this->autor = copie.autor;
     this->editura = copie.editura;
