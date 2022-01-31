@@ -6,6 +6,8 @@
 #define OOPTESTING_CARTE_H
 #include <iostream>
 #include <memory>
+#include <vector>
+
 using std::string;
 
 
@@ -35,14 +37,34 @@ public:
     void setAnPublicare(int anPublicare);
     void setPret(int pret);
 
-    friend std::ostream &operator<<(std::ostream &os, const Carte &carte);
-
     Carte(const Carte &copie);
     Carte & operator=(const Carte &copie);
 
+    void review(const string &query){};
+
+// Timp de citire al cartilor - viteza in pagini / minut
+    virtual void Timp(double viteza) {
+        int minuteCitire = nrPagini / viteza;
+        int ore = minuteCitire / 60;
+        minuteCitire = minuteCitire % 60;
+        if (ore > 0)
+            std::cout << "Pentru a termina cartea \"" << nume << "\" aveti nevoie de aproximativ " << ore << " ore si "
+                      << minuteCitire << " de minute" << std::endl;
+        else if (ore == 0 && minuteCitire > 19)
+            std::cout << "Pentru a termina cartea \"" << getNume() << "\" aveti nevoie de aproximativ "
+                      << minuteCitire << " de minute" << std::endl;
+        else
+            std::cout << "Pentru a termina cartea \"" << nume << "\" aveti nevoie de aproximativ " << minuteCitire
+                      << " minute" << std::endl;
+    }
 
 // Destructorul
     virtual ~Carte();
+
+protected:
+    // Am implementat aici un virtual print pentru ca nu vad cum as putea sa dau overload operatorului << altfel
+    virtual void print(std::ostream & stream) const;
+    friend std::ostream &operator<<(std::ostream &os, const Carte &carte);
 
 };
 

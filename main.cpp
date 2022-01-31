@@ -10,6 +10,7 @@
 #include "Abonament.h"
 #include "PachetPromo.h"
 #include "Librarie.h"
+#include "Review.h"
 
 using std::string;
 
@@ -24,11 +25,14 @@ int main() {
     Carte carte5("Harry Potter 3", "J.K. Rowling", "Arthur", 350, 1999, 33);
     Carte carte6("Harry Potter 4", "J.K. Rowling", "Arthur", 420, 2000, 36);
     std::cout << carte1;
+    carte1.Timp(2);
 
     ComicBook comic1("Spider-Man 1", "Stan Lee", "Marvel", 30, 2011, 47);
     ComicBook comic2("SuperMan 1", "Stan Lee", "Marvel", 35, 2015, 52);
     ComicBook comic3("Batman Returns", "Stan Lee", "Marvel", 55, 2013, 70);
     std::cout << comic1;
+    comic1.Timp(2);
+
 
     std::vector<std::shared_ptr<Carte>> carti;
     carti.push_back(std::make_shared<Carte>(carte1));
@@ -37,6 +41,7 @@ int main() {
     carti.push_back(std::make_shared<Carte>(carte4));
     carti.push_back(std::make_shared<Carte>(carte5));
     carti.push_back(std::make_shared<Carte>(carte6));
+
 
     try {
         std::vector<std::shared_ptr<Carte>> cartiComenzi;
@@ -73,5 +78,15 @@ catch (const std::exception& e){
     lib1.search("Harry Potter 3");
     lib1.listCarti("J.K. Rowling");
 
+    Review r1("Harry Potter 3", carti);
+    r1.addReview("Este o carte foarte buna");
+    r1.addReview(4);
+    r1.addReview(8.9);
+
+    r1.addReview(6);
+    r1.addReview(12.5);
+
+    Review r2("Carte Inexistenta", carti);
+    r2.addReview("Mi-a placut foarte mult");
 }
 

@@ -19,16 +19,6 @@ void Librarie::setAdresaClient(const string &adresaClient) {
     Librarie::adresaClient = adresaClient;
 }
 
-//void Librarie::search(const string &query) {
-//    for (int i = 0; i < carte.size(); i++) {
-//        if (carte[i]->getNume() == query) {
-//            std::cout << query << " a fost gasita." << std::endl;
-//            return;
-//        }
-//    }
-//    std::cout << "Cartea nu a fost gasita" << std::endl;
-//}
-
 std::vector<string> Librarie::search(const string &query) {
     std::vector <std::string> rezultate;
     for (int i = 0; i < carte.size(); i++) {

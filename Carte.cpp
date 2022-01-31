@@ -57,10 +57,10 @@ void Carte::setPret(int pret) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Carte &carte) {
-    os << "Numele cartii: " << carte.nume << ", Autor: " << carte.autor << " Editura: " << carte.editura
+    carte.print(os << "Numele cartii: " << carte.nume << ", Autor: " << carte.autor << " Editura: " << carte.editura
        << ", Numar Pagini: "
        << carte.nrPagini << ", Anul Publicarii: " << carte.anPublicare << ", Pret: " << carte.pret << " lei"
-       << std::endl;
+       << std::endl);
     return os;
 }
 
@@ -84,3 +84,7 @@ Carte &Carte::operator=(const Carte &copie) {
 }
 
 Carte::~Carte() {}
+
+void Carte::print(std::ostream &stream) const {
+
+}

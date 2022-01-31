@@ -25,7 +25,6 @@ public:
 
     void setAdresaClient(const string &adresaClient);
 
-
     std::vector<string> search(const string &query);
 
     void listCarti(const string &query);

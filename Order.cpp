@@ -33,7 +33,6 @@ void Order::setListaOrder(const std::vector<std::shared_ptr<Carte>> &listaOrder)
 }
 
 void Order::comanda_pret() {
-
     for (int i = 0; i < lista_order.size(); i++)
         pret_total = pret_total + lista_order.at(i)->getPret();
     this->pret = pret_total;
