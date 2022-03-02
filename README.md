@@ -1,5 +1,5 @@
 # Proiect OOP
-Librarie virtuala construita in C++ ce are ca rol prezentarea diferitelor functii din OOP.
+Librărie virtuală construită în C++ ce are ca rol prezentarea diferitelor funcții din OOP.
 
 ### Tema 0
 
