@@ -66,7 +66,3 @@ Librarie virtuala construita cu ajutorul OOP in C++.
 - [X] 2 design patterns
 - [X] funcții și clase șablon (`template`)
 - [X] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
-
-## Resurse
-
-<Adăugați aici sau într-un markdown separat resurse de unde v-ați inspirat, dacă le considerați relevante.>
